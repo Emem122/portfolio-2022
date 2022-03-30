@@ -1,0 +1,59 @@
+/* font-family: 'Bakbak One', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Staatliches', cursive; */
+
+:root {
+	--green: #97bfb4;
+	--green-dark: #5f9284;
+	--red: #dd4a48;
+	--white: #f5eedc;
+	--brown: #4f091d;
+	--yellow: #fad92f;
+	/* --green-dark: #567c72; */
+	--ff-big: "Bakbak One", "Roboto", sans-serif;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	background-color: var(--green);
+}
+
+.md-up {
+	display: none;
+}
+
+.md-down {
+	display: block;
+}
+
+// スクロールバーの非表示
+body::-webkit-scrollbar {
+	display: none;
+}
+
+@media screen and (max-width: 767.98px) {
+	.md-up {
+		display: block;
+	}
+	.md-down {
+		display: none;
+	}
+}
+
+.pageTitle,
+.navTitle {
+	font-family: "Staatliches", "Bakbak One", "Roboto", cursive;
+}
+
+.pageTitle {
+	display: inline-block;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	margin-top: clamp(1.5rem, 2vw, 3rem);
+	color: var(--white);
+	font-size: clamp(60px, 7vw, 100px);
+	text-shadow: 5px -4px 0 var(--red);
+	text-align: center;
+}
