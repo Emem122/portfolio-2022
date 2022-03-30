@@ -21,14 +21,14 @@ export const Work = [
 		github: "",
 		img: `${Sample}`,
 	},
-	// {
-	// 	id: 3,
-	// 	name: "Dev.to Clone",
-	// 	description: "A clone of Dev.to build using ReactJS. With realtime fetching of articles from dev.to using API.",
-	// 	tags: ["react", "api", "sass"],
+	{
+		id: 3,
+		name: "Hotel Website",
+		description: "A clone of Dev.to build using ReactJS. With realtime fetching of articles from dev.to using API.",
+		tags: ["react"],
 
-	// 	demo: "",
-	// 	github: "",
-	// 	img: `${Sample}`,
-	// },
+		demo: "https://emem122.github.io/cocon/",
+		github: "",
+		img: `${Sample}`,
+	},
 ];
