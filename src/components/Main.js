@@ -11,7 +11,7 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--green);
+	background-color: #97bfb4;
 	position: relative;
 `;
 
@@ -32,22 +32,22 @@ const MainVisual = styled.div`
 
 const Title = styled(motion.h1)`
 	font-size: clamp(24px, 17vw, 120px);
-	color: var(--red);
+	color: #dd4a48;
 	line-height: 1;
-	text-shadow: 3px 2px 0px var(--green-dark);
-	font-family: var(--ff-big);
+	text-shadow: 3px 2px 0px #5f9284;
+	font-family: "Bakbak One", "Roboto", sans-serif;
 
 	span {
 		display: inline-block;
 	}
 
 	span.white {
-		color: var(--white);
+		color: #f5eedc;
 	}
 `;
 
 const SubTitle = styled.h3`
-	color: var(--green-dark);
+	color: #5f9284;
 `;
 
 const bounce = keyframes`
@@ -74,25 +74,25 @@ const Nav = styled.div`
 
 	& > * {
 		font-size: clamp(40px, 13vw, 60px);
-		color: var(--white);
+		color: #f5eedc;
 		cursor: pointer;
 		transition: text-shadow 250ms ease;
 
 		&:hover {
 			animation: ${bounce} infinite 0.8s ease-out;
-			text-shadow: -3px -3px 0px var(--red);
+			text-shadow: -3px -3px 0px #dd4a48;
 		}
 	}
 `;
 
 const ABOUT = styled(motion(NavLink))`
-	text-shadow: -3px -3px 0px var(--green-dark);
+	text-shadow: -3px -3px 0px #5f9284;
 `;
 const SKILLS = styled(motion(NavLink))`
-	text-shadow: -3px -3px 0px var(--green-dark);
+	text-shadow: -3px -3px 0px #5f9284;
 `;
 const WORKS = styled(motion(NavLink))`
-	text-shadow: -3px -3px 0px var(--green-dark);
+	text-shadow: -3px -3px 0px #5f9284;
 `;
 
 const Main = () => {

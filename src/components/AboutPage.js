@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 // import gsap from "gsap";
 import React from "react";
-// import Particles from "react-tsparticles";
 import styled from "styled-components";
 
-// import configParticles from "../config/particlesjs.json";
 import Hamburger from "../subComponents/Hamburger";
 import HomeBtn from "../subComponents/HomeBtn";
 // import { ProfilePic } from "./SvgImages";
@@ -52,7 +50,7 @@ const ContentItem = styled(motion.li)`
 	align-items: flex-start;
 	padding: 2rem 3.5rem;
 	border-radius: 1rem;
-	background-color: var(--white);
+	background-color: #f5eedc;
 	box-shadow: 4px 4px 3px #567c72;
 	@media screen and (max-width: 767.98px) {
 		padding: 1.5rem 2rem;
@@ -72,7 +70,7 @@ const ContentInn = styled.div`
 const ContentTitle = styled.h3`
 	font-size: clamp(18px, 3vw, 24px);
 	margin-bottom: 0.5rem;
-	color: var(--green-dark);
+	color: #5f9284;
 `;
 
 const ContentText = styled.div`

@@ -2,20 +2,19 @@
 font-family: 'Roboto', sans-serif;
 font-family: 'Staatliches', cursive; */
 
-:root {
+/* :root {
 	--green: #97bfb4;
 	--green-dark: #5f9284;
 	--red: #dd4a48;
 	--white: #f5eedc;
 	--brown: #4f091d;
 	--yellow: #fad92f;
-	/* --green-dark: #567c72; */
 	--ff-big: "Bakbak One", "Roboto", sans-serif;
-}
+} */
 
 body {
 	font-family: "Roboto", sans-serif;
-	background-color: var(--green);
+	background-color: #97bfb4;
 }
 
 .md-up {
@@ -26,7 +25,7 @@ body {
 	display: block;
 }
 
-// スクロールバーの非表示
+/* スクロールバーの非表示 */
 body::-webkit-scrollbar {
 	display: none;
 }
@@ -52,8 +51,8 @@ body::-webkit-scrollbar {
 	top: 0;
 	z-index: 2;
 	margin-top: clamp(1.5rem, 2vw, 3rem);
-	color: var(--white);
+	color: #f5eedc;
 	font-size: clamp(60px, 7vw, 100px);
-	text-shadow: 5px -4px 0 var(--red);
+	text-shadow: 5px -4px 0 #dd4a48;
 	text-align: center;
 }

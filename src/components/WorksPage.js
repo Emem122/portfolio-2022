@@ -18,15 +18,14 @@ const Box = styled(motion.div)`
 	height: 400vh;
 	position: relative;
 	display: flex;
-	@media screen and (max-width: 820px) {
-	}
+
 	@media screen and (max-width: 767.98px) {
 		height: 370vh;
 	}
 `;
 
 const Main = styled(motion.ul)`
-	/* background-color: var(--green); */
+	/* background-color: #97bfb4; */
 	position: fixed;
 	top: 12rem;
 	left: calc(8rem + 15vw);

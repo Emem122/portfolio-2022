@@ -4,11 +4,11 @@ import gsap from "gsap";
 import styled from "styled-components";
 import HomeBtn from "../subComponents/HomeBtn";
 import { SvgFile } from "./SvgImages";
-import Mouse from "./../images/mouse.png";
+import Mouse from "../images/mouse.png";
 import Hamburger from "../subComponents/Hamburger";
 
 const Container = styled.div`
-	background-color: var(--green);
+	background-color: #97bfb4;
 	/* position: relative; */
 	height: 100vh;
 	width: 100vw;
@@ -94,15 +94,15 @@ const WindowBar = styled.div`
 		border-radius: 50%;
 		transform: translateY(-50%);
 		&--red {
-			background-color: var(--red);
+			background-color: #dd4a48;
 			left: 15px;
 		}
 		&--yellow {
-			background-color: var(--yellow);
+			background-color: #fad92f;
 			left: 45px;
 		}
 		&--green {
-			background-color: var(--green);
+			background-color: #97bfb4;
 			left: 75px;
 		}
 	}
@@ -110,7 +110,7 @@ const WindowBar = styled.div`
 
 const ContentWrap = styled.div`
 	padding: 2vw clamp(10px, 5vw, 50px);
-	background-color: var(--white);
+	background-color: #f5eedc;
 	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
@@ -131,7 +131,7 @@ const SkillIcon = styled.div`
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	background: var(--yellow);
+	background: #fad92f;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -149,7 +149,7 @@ const SkillBalloonArea = styled.div`
 `;
 
 const SkillName = styled.h5`
-	color: var(--brown);
+	color: #4f091d;
 `;
 
 const SkillBalloon = styled.div`
@@ -160,7 +160,7 @@ const SkillBalloon = styled.div`
 	margin-right: clamp(10px, 5vw, 60px);
 	font-size: clamp(12px, 2vw, 14px);
 	${Content}:nth-of-type(even) & {
-		background-color: var(--green);
+		background-color: #97bfb4;
 		margin-right: 0;
 		margin-left: clamp(10px, 5vw, 60px);
 	}
@@ -180,7 +180,7 @@ const SkillBalloon = styled.div`
 		${Content}:nth-of-type(even) & {
 			right: -13px;
 			left: inherit;
-			border-right: 25px solid var(--green);
+			border-right: 25px solid #97bfb4;
 			border-left: none;
 			-webkit-transform: rotate(45deg);
 			transform: rotate(45deg);
@@ -211,7 +211,7 @@ const SkillsPage = () => {
 					exit={{ scale: 0, transition: { delay: 0.1 } }}
 				>
 					<SvgFile style={{ width: "80%", verticalAlign: "bottom" }} />
-					<p style={{ color: "var(--green-dark)", fontFamily: "var(--ff-big)", textAlign: "center" }}>File1</p>
+					<p style={{ color: "#5f9284", fontFamily: "Bakbak One", textAlign: "center" }}>File1</p>
 				</motion.div>
 				<motion.div
 					style={{ textAlign: "center" }}
@@ -220,7 +220,7 @@ const SkillsPage = () => {
 					exit={{ scale: 0, transition: { delay: 0.2 } }}
 				>
 					<SvgFile style={{ width: "80%", verticalAlign: "bottom" }} />
-					<p style={{ color: "var(--green-dark)", fontFamily: "var(--ff-big)", textAlign: "center" }}>File2</p>
+					<p style={{ color: "#5f9284", fontFamily: "Bakbak One", textAlign: "center" }}>File2</p>
 				</motion.div>
 			</FileWrap>
 			<MouseImg

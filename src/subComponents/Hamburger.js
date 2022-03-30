@@ -19,8 +19,8 @@ const Button = styled(motion.div)`
 	width: 50px;
 	height: 50px;
 	border-radius: 50px;
-	background: var(--red);
-	border: 8px solid var(--yellow);
+	background: #dd4a48;
+	border: 8px solid #fad92f;
 	box-sizing: border-box;
 
 	@media screen and (max-width: 767.98px) {
@@ -45,8 +45,8 @@ const Content = styled(motion.div)`
 	}
 
 	& > * {
-		background-color: var(--white);
-		color: var(--brown);
+		background-color: #f5eedc;
+		color: #4f091d;
 		padding: 0.8rem 1.5rem;
 		text-align: center;
 		border-radius: 20px;

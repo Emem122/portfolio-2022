@@ -1,4 +1,4 @@
-import Sample from "./../images/sample.png";
+import Sample from "../images/sample.png";
 
 export const Work = [
 	{

@@ -8,9 +8,9 @@ const Box = styled(motion.li)`
 	/* height: 60vh; */
 	/* padding: 1.5rem 2rem; */
 	margin-right: 8rem;
-	background-color: var(--white);
+	background-color: #f5eedc;
 	border-radius: 28px;
-	border: 20px solid var(--green-dark);
+	border: 20px solid #5f9284;
 	display: flex;
 	flex-direction: column;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
@@ -60,12 +60,12 @@ const Text = styled.div`
 `;
 
 const Title = styled.h2`
-	color: var(--red);
+	color: #dd4a48;
 	font-size: calc(1em + 0.5vw);
 `;
 
 const Description = styled.h2`
-	color: var(--brown);
+	color: #4f091d;
 	font-size: calc(0.8em + 0.3vw);
 	font-weight: 400;
 `;
@@ -86,8 +86,8 @@ const Tag = styled.span`
 	padding: 0.15rem 0.3rem 0.1rem;
 	border-radius: 5px;
 	font-weight: bold;
-	color: var(--green);
-	border: 2px solid var(--green);
+	color: #97bfb4;
+	border: 2px solid #97bfb4;
 `;
 
 const Footer = styled.footer`
@@ -99,13 +99,13 @@ const Footer = styled.footer`
 const Link = styled(NavLink)`
 	margin-left: auto;
 	padding: 0.5rem 2.5rem;
-	background-color: var(--green-dark);
+	background-color: #5f9284;
 	border-radius: 0 0 7px 0;
-	color: var(--white);
+	color: #f5eedc;
 	font-size: calc(1em + 0.5vw);
 	text-decoration: none;
 	transition: all 250ms ease;
-	font-family: var(--ff-big);
+	font-family: "Bakbak One", "Roboto", sans-serif;
 
 	&:hover {
 		background-color: #58887b;

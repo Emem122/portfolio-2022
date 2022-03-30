@@ -10,7 +10,7 @@ const Container = styled(motion.div)`
 	left: 30px;
 	top: 20px;
 	z-index: 3;
-	background-color: var(--green-dark);
+	background-color: #5f9284;
 	border-radius: 1rem;
 	@media screen and (max-width: 767.98px) {
 		left: 10px;
@@ -21,13 +21,13 @@ const Container = styled(motion.div)`
 const HomeIcon = styled(NavLink)`
 	&:hover {
 		svg {
-			fill: var(--green);
+			fill: #97bfb4;
 		}
 	}
 	svg {
 		width: 40px;
 		height: 40px;
-		fill: var(--white);
+		fill: #f5eedc;
 		transition: all 250ms ease;
 	}
 `;
