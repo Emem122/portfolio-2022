@@ -33,18 +33,19 @@ const Title = styled(motion.h2)`
 `;
 
 const ContentWrap = styled.div`
-	margin: 2rem auto 0;
+	margin: 2rem auto;
 	max-width: 680px;
 	padding: 0 1rem;
 `;
 const ContentList = styled(motion.ul)`
 	list-style: none;
-	& > li:not(:first-of-type) {
-		margin-top: 1.5rem;
-	}
+	padding-bottom: 2rem;
+	/* & > li:not(:first-of-type) {
+	} */
 `;
 
 const ContentItem = styled(motion.li)`
+	margin-bottom: 1.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -53,22 +54,23 @@ const ContentItem = styled(motion.li)`
 	background-color: #f5eedc;
 	box-shadow: 4px 4px 3px #567c72;
 	@media screen and (max-width: 767.98px) {
-		padding: 1.5rem 2rem;
+		padding: 1rem;
+		margin-bottom: 1rem;
 	}
 `;
 const ContentEmoji = styled.div`
-	width: 15%;
+	width: 12%;
 	.twemoji {
 		width: 100% !important;
 	}
 `;
 
 const ContentInn = styled.div`
-	width: 80%;
+	width: 83%;
 `;
 
 const ContentTitle = styled.h3`
-	font-size: clamp(18px, 3vw, 24px);
+	font-size: clamp(18px, 3vw, 22px);
 	margin-bottom: 0.5rem;
 	color: #5f9284;
 `;
@@ -95,14 +97,17 @@ const ContainerVariant = {
 
 const ListVariant = {
 	hidden: {
-		scaleX: 0,
+		// scaleX: 0,
+		y: 100,
 		opacity: 0,
 	},
 	show: {
-		scaleX: 1,
+		y: 0,
+		// scaleX: 1,
 		opacity: 1,
 		transition: {
 			type: "spring",
+			mass: 0.9,
 		},
 	},
 };
@@ -112,14 +117,12 @@ const AboutPage = () => {
 		<IconContext.Provider value={{ size: "100%" }}>
 			<motion.div>
 				<Container>
-					<motion.div exit={{ y: 200, opacity: 0, transition: { duration: 0.5 } }}>
-						<HomeBtn />
-					</motion.div>
+					<HomeBtn />
 
 					<Title
 						className="pageTitle"
-						initial={{ y: -200, transition: { type: "spring", duration: 1.5, delay: 0.3 } }}
-						animate={{ y: 0, transition: { type: "spring", duration: 1.5, delay: 0.3 } }}
+						initial={{ y: -200 }}
+						animate={{ y: 0, transition: { type: "spring", delay: 0.4 } }}
 						exit={{ y: 200, opacity: 0, scale: 0, transition: { delay: 0.4, duration: 0.5 } }}
 					>
 						ABOUT

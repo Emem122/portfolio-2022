@@ -27,8 +27,24 @@ export const Work = [
 		description: "A clone of Dev.to build using ReactJS. With realtime fetching of articles from dev.to using API.",
 		tags: ["react"],
 
-		demo: "https://emem122.github.io/cocon/",
+		demo: "https://cocon.pages.dev/",
 		github: "",
+		img: `${Sample}`,
+	},
+	{
+		id: 4,
+		name: "Todo App",
+		description: "test",
+		tags: ["tailwind"],
+		demo: "https://en-todoapp.pages.dev/",
+		img: `${Sample}`,
+	},
+	{
+		id: 5,
+		name: "QR Code Generator",
+		description: "test",
+		tags: ["HTML"],
+		demo: "https://qrcode-generator.pages.dev/",
 		img: `${Sample}`,
 	},
 ];

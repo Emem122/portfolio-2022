@@ -2,47 +2,39 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BiHomeCircle } from "react-icons/bi";
 
 const Container = styled(motion.div)`
-	padding: 0.25rem 1rem;
+	padding: 0.4rem 1rem;
 	position: fixed;
-	left: 30px;
-	top: 20px;
+	left: 35px;
+	top: 38px;
 	z-index: 3;
 	background-color: #5f9284;
 	border-radius: 1rem;
 	@media screen and (max-width: 767.98px) {
-		left: 10px;
-		top: 10px;
+		left: 20px;
+		top: 32px;
 	}
 `;
 
-const HomeIcon = styled(NavLink)`
-	&:hover {
-		svg {
-			fill: #97bfb4;
-		}
-	}
-	svg {
-		width: 40px;
-		height: 40px;
-		fill: #f5eedc;
-		transition: all 250ms ease;
+const Logo = styled(NavLink)`
+	h2 {
+		color: #f5eedc;
 	}
 `;
 
 const HomeBtn = () => {
 	return (
-		<Container
-			initial={{ x: -200, transition: { type: "spring", duration: 1.5, delay: 1 } }}
-			animate={{ x: 0, transition: { type: "spring", duration: 1.5, delay: 1 } }}
-			exit={{ scale: 0 }}
-		>
-			<HomeIcon to="/">
-				<BiHomeCircle />
-			</HomeIcon>
-		</Container>
+		<Logo to="/">
+			<Container
+				initial={{ x: -200 }}
+				animate={{ x: 0, transition: { type: "spring", delay: 0.4 } }}
+				exit={{ scale: 0 }}
+				whileHover={{ filter: "brightness(1.15)" }}
+			>
+				<motion.h2>EN</motion.h2>
+			</Container>
+		</Logo>
 	);
 };
 

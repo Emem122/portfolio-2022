@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import HomeBtn from "../subComponents/HomeBtn";
 import { Work } from "../data/WorksData";
 import Card from "../subComponents/WorksCard";
@@ -54,15 +54,71 @@ const Rotate = styled.span`
 	z-index: 1;
 `;
 
+const ScrollAnime = keyframes`
+0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+  35% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+  35.1% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+  70%, 100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }`;
+
+const Scroll = styled(motion.p)`
+	display: inline-block;
+	position: fixed;
+	left: 40px;
+	bottom: 0;
+	/* z-index: 1; */
+	padding: 10px 10px 110px;
+	overflow: hidden;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	writing-mode: vertical-lr;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 2px;
+		height: 100px;
+		background: #fff;
+		animation: ${ScrollAnime} 2s cubic-bezier(1, 0, 0, 1) infinite;
+	}
+`;
+
+// const ScrollDown = styled(motion.p)`
+// 	position: fixed;
+// 	bottom: 10px;
+// 	left: 20px;
+// 	font-weight: bold;
+// 	font-size: calc(0.8em + 0.7vw);
+// 	letter-spacing: 0.3px;
+// 	color: #dd4a48;
+// `;
+
 // Framer-motion Configuration
 const container = {
-	hidden: { opacity: 0, transition: { delayChildren: 2.1 } },
+	hidden: { opacity: 0 },
 	show: {
 		opacity: 1,
 		transition: {
 			staggerChildren: 0.25,
 			duration: 0.5,
-			delayChildren: 2.1,
+			delayChildren: 1.5,
 		},
 	},
 };
@@ -87,10 +143,17 @@ const WorksPage = () => {
 			<motion.div exit={{ opacity: 0, transition: { duration: 0.5 } }}>
 				<HomeBtn />
 			</motion.div>
+			<Scroll
+				initial={{ y: 200, opacity: 0 }}
+				animate={{ y: 0, opacity: 1, transition: { type: "spring", duration: 1.5, delay: 0.3 } }}
+				exit={{ scale: 0, opacity: 0, transition: { delay: 0.1, duration: 0.5 } }}
+			>
+				Scroll
+			</Scroll>
 			<Title
 				className="pageTitle"
-				initial={{ y: -200, transition: { type: "spring", duration: 1.5, delay: 1 } }}
-				animate={{ y: 0, transition: { type: "spring", duration: 1.5, delay: 1 } }}
+				initial={{ y: -200 }}
+				animate={{ y: 0, transition: { type: "spring", duration: 1.5, delay: 0.7 } }}
 				exit={{ scale: 0, opacity: 0, transition: { delay: 0.1, duration: 0.5 } }}
 			>
 				WORKS
@@ -103,6 +166,17 @@ const WorksPage = () => {
 					))}
 				</Main>
 			</Box>
+			{/* <ScrollDown
+				initial={{ opacity: 0 }}
+				animate={{
+					opacity: 1,
+					y: [0, -10],
+					transition: { delay: 1, y: { duration: 0.6, yoyo: Infinity, ease: "easeOut" } },
+				}}
+				exit={{ opacity: 0 }}
+			>
+				Scroll Down
+			</ScrollDown> */}
 		</Container>
 	);
 };

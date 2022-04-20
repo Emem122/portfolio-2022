@@ -11,6 +11,7 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 3rem;
 	background-color: #97bfb4;
 	position: relative;
 `;
@@ -20,13 +21,13 @@ const MainVisual = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	position: absolute;
+	/* position: absolute;
 	left: 50%;
 	top: 48%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
 	width: 100%;
 	@media screen and (max-width: 767.98px) {
-		top: 35%;
+		/* top: 35%; */
 	}
 `;
 
@@ -35,6 +36,7 @@ const Title = styled(motion.h1)`
 	color: #dd4a48;
 	line-height: 1;
 	text-shadow: 3px 2px 0px #5f9284;
+	margin: 0;
 	font-family: "Bakbak One", "Roboto", sans-serif;
 
 	span {
@@ -62,26 +64,27 @@ const bounce = keyframes`
 }
 `;
 
-const Nav = styled.div`
-	position: absolute;
-	bottom: 3%;
+const Nav = styled(motion.div)`
+	/* position: absolute;
+	bottom: 3%; */
 	display: flex;
 	gap: 2rem;
 	@media screen and (max-width: 767.98px) {
-		flex-direction: column;
+		bottom: 20%;
+		/* flex-direction: column; */
 		gap: 0.75rem;
 	}
 
 	& > * {
-		font-size: clamp(40px, 13vw, 60px);
+		font-size: clamp(20px, 10vw, 60px);
 		color: #f5eedc;
 		cursor: pointer;
-		transition: text-shadow 250ms ease;
+		/* transition: text-shadow 250ms ease;
 
 		&:hover {
 			animation: ${bounce} infinite 0.8s ease-out;
 			text-shadow: -3px -3px 0px #dd4a48;
-		}
+		} */
 	}
 `;
 
@@ -94,6 +97,35 @@ const SKILLS = styled(motion(NavLink))`
 const WORKS = styled(motion(NavLink))`
 	text-shadow: -3px -3px 0px #5f9284;
 `;
+
+/* variants */
+const parentVariants = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			delay: 2.5,
+			when: "beforeChildren",
+			staggerChildren: 0.2,
+		},
+	},
+};
+
+const childVariants = {
+	hidden: {
+		scale: 0,
+	},
+	visible: {
+		scale: [0, 1.2, 1],
+		transition: {
+			type: "spring",
+			duration: 0.5,
+			// duration: 0.8,
+		},
+	},
+};
 
 const Main = () => {
 	useLayoutEffect(() => {
@@ -151,30 +183,57 @@ const Main = () => {
 						<span>i</span>
 						<span>o</span>
 					</Title>
-					<SubTitle className="sub-title">Web Design / Coder</SubTitle>
 				</MainVisual>
-				<Nav className="navTitle">
+				<SubTitle className="sub-title">Web Design / Coder</SubTitle>
+				<Nav className="navTitle" variants={parentVariants} initial="hidden" animate="visible">
 					<ABOUT
 						to="/about"
-						initial={{ scale: 0 }}
-						animate={{ scale: [0, 1.2, 1] }}
-						transition={{ type: "spring", duration: 0.8, delay: 3.2 }}
+						variants={childVariants}
+						whileHover={{
+							y: [0, -5],
+							textShadow: "-3px -3px 0px #dd4a48",
+							transition: {
+								y: {
+									duration: 0.4,
+									yoyo: Infinity,
+									ease: "easeOut",
+								},
+							},
+						}}
 					>
 						ABOUT
 					</ABOUT>
 					<SKILLS
 						to="/skills"
-						initial={{ scale: 0 }}
-						animate={{ scale: [0, 1.2, 1] }}
-						transition={{ type: "spring", duration: 0.8, delay: 3.4 }}
+						variants={childVariants}
+						whileHover={{
+							y: [0, -5],
+							textShadow: "-3px -3px 0px #dd4a48",
+							transition: {
+								y: {
+									duration: 0.4,
+									yoyo: Infinity,
+									ease: "easeOut",
+								},
+							},
+						}}
 					>
 						SKILLS
 					</SKILLS>
 					<WORKS
 						to="/works"
-						initial={{ scale: 0 }}
-						animate={{ scale: [0, 1.2, 1] }}
-						transition={{ type: "spring", duration: 0.8, delay: 3.6 }}
+						variants={childVariants}
+						whileHover={{
+							y: [0, -5],
+							textShadow: "-3px -3px 0px #dd4a48",
+							transition: {
+								y: {
+									duration: 0.4,
+									yoyo: Infinity,
+									ease: "easeOut",
+								},
+							},
+						}}
 					>
 						WORKS
 					</WORKS>

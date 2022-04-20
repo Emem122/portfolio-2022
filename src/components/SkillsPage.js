@@ -6,6 +6,7 @@ import HomeBtn from "../subComponents/HomeBtn";
 import { SvgFile } from "./SvgImages";
 import Mouse from "../images/mouse.png";
 import Hamburger from "../subComponents/Hamburger";
+import { Skill } from "../data/SkillsData";
 
 const Container = styled.div`
 	background-color: #97bfb4;
@@ -65,7 +66,7 @@ const WindowContainer = styled(motion.div)`
 	height: 70vh;
 	max-height: 650px;
 	margin: 160px auto 0;
-	border-radius: 20px;
+	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
 	display: flex;
@@ -75,20 +76,21 @@ const WindowContainer = styled(motion.div)`
 		margin-top: 100px;
 		width: 90vw;
 		height: fit-content;
+		max-height: 70vh;
 	}
 `;
 
 const WindowBar = styled.div`
 	flex-shrink: 0;
 	width: 100%;
-	height: 45px;
+	height: 35px;
 	background-color: #c4c4c4;
 	position: relative;
 	cursor: pointer;
 
 	.button {
-		width: 18px;
-		height: 18px;
+		width: 15px;
+		height: 15px;
 		position: absolute;
 		top: 50%;
 		border-radius: 50%;
@@ -115,6 +117,17 @@ const ContentWrap = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+	height: 100%;
+
+	::-webkit-scrollbar {
+		-webkit-appearance: none;
+		width: 7px;
+	}
+	::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background-color: rgba(0, 0, 0, 0.35);
+		box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+	}
 `;
 const Content = styled.div`
 	display: flex;
@@ -196,7 +209,7 @@ const SkillsPage = () => {
 			</motion.div>
 			<Title
 				className="pageTitle"
-				initial={{ y: -200, transition: { type: "spring", duration: 1.5, delay: 0.1 } }}
+				initial={{ y: -200 }}
 				animate={{ y: 0, transition: { type: "spring", duration: 1.5, delay: 0.1 } }}
 				exit={{ y: -200, opacity: 0, transition: { delay: 0.3, duration: 0.5 } }}
 			>
@@ -235,10 +248,10 @@ const SkillsPage = () => {
 				exit={{ y: 1000, scale: 0, transition: { delay: 0.4, duration: 1.2, delay: 0.4 } }}
 				drag
 				dragConstraints={{
-					right: 500,
-					left: -500,
-					top: -40,
-					bottom: 300,
+					right: 0,
+					left: 0,
+					top: 0,
+					bottom: 0,
 				}}
 			>
 				<WindowBar>
@@ -247,94 +260,17 @@ const SkillsPage = () => {
 					<span className="button button--green"></span>
 				</WindowBar>
 				<ContentWrap>
-					<Content>
-						<SkillIcon>JS</SkillIcon>
-						<SkillBalloonArea>
-							<SkillName>JavaScript</SkillName>
-							<SkillBalloon>
-								<p>
-									テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-								</p>
-							</SkillBalloon>
-						</SkillBalloonArea>
-					</Content>
-					<Content>
-						<SkillIcon>JS</SkillIcon>
-						<SkillBalloonArea>
-							<SkillName>JavaScript</SkillName>
-							<SkillBalloon>
-								<p>
-									テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-								</p>
-							</SkillBalloon>
-						</SkillBalloonArea>
-					</Content>
-					<Content>
-						<SkillIcon>JS</SkillIcon>
-						<SkillBalloonArea>
-							<SkillName>JavaScript</SkillName>
-							<SkillBalloon>
-								<p>
-									テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-								</p>
-							</SkillBalloon>
-						</SkillBalloonArea>
-					</Content>
-					<Content>
-						<SkillIcon>JS</SkillIcon>
-						<SkillBalloonArea>
-							<SkillName>JavaScript</SkillName>
-							<SkillBalloon>
-								<p>
-									テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-								</p>
-							</SkillBalloon>
-						</SkillBalloonArea>
-					</Content>
-					<Content>
-						<SkillIcon>JS</SkillIcon>
-						<SkillBalloonArea>
-							<SkillName>JavaScript</SkillName>
-							<SkillBalloon>
-								<p>
-									テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-								</p>
-							</SkillBalloon>
-						</SkillBalloonArea>
-					</Content>
-					<Content>
-						<SkillIcon>JS</SkillIcon>
-						<SkillBalloonArea>
-							<SkillName>JavaScript</SkillName>
-							<SkillBalloon>
-								<p>
-									テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-								</p>
-							</SkillBalloon>
-						</SkillBalloonArea>
-					</Content>
-					<Content>
-						<SkillIcon>JS</SkillIcon>
-						<SkillBalloonArea>
-							<SkillName>JavaScript</SkillName>
-							<SkillBalloon>
-								<p>
-									テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-								</p>
-							</SkillBalloon>
-						</SkillBalloonArea>
-					</Content>
-					<Content>
-						<SkillIcon>JS</SkillIcon>
-						<SkillBalloonArea>
-							<SkillName>JavaScript</SkillName>
-							<SkillBalloon>
-								<p>
-									テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-								</p>
-							</SkillBalloon>
-						</SkillBalloonArea>
-					</Content>
+					{Skill.map((d) => (
+						<Content key={d.id}>
+							<SkillIcon>{d.icon}</SkillIcon>
+							<SkillBalloonArea>
+								<SkillName>{d.name}</SkillName>
+								<SkillBalloon>
+									<p>{d.desc}</p>
+								</SkillBalloon>
+							</SkillBalloonArea>
+						</Content>
+					))}
 				</ContentWrap>
 			</WindowContainer>
 		</Container>

@@ -5,16 +5,13 @@ import { motion } from "framer-motion";
 
 const Box = styled(motion.li)`
 	width: 18rem;
-	/* height: 60vh; */
-	/* padding: 1.5rem 2rem; */
 	margin-right: 8rem;
 	background-color: #f5eedc;
-	border-radius: 28px;
-	border: 20px solid #5f9284;
+	border-radius: 25px;
+	border: 15px solid #5f9284;
 	display: flex;
 	flex-direction: column;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-	/* justify-content: space-between; */
 	@media screen and (max-width: 820px) {
 		width: 22rem;
 	}
@@ -26,7 +23,7 @@ const Box = styled(motion.li)`
 
 const Thumb = styled.div`
 	flex-shrink: 0;
-	border-radius: 8px 8px 0 0;
+	border-radius: 10px 10px 0 0;
 	max-width: 300px;
 	width: 100%;
 	overflow: hidden;
@@ -50,7 +47,7 @@ const Thumb = styled.div`
 `;
 
 const Text = styled.div`
-	padding: 0.75rem 1rem;
+	padding: 1rem 1rem;
 	@media screen and (max-width: 820px) {
 		padding: 2rem 1.5rem;
 	}
@@ -66,12 +63,11 @@ const Title = styled.h2`
 
 const Description = styled.h2`
 	color: #4f091d;
-	font-size: calc(0.8em + 0.3vw);
+	font-size: calc(0.8em + 0.2vw);
 	font-weight: 400;
 `;
 
 const Tags = styled.div`
-	/* padding: 0.5rem 0; */
 	padding: 0.25rem 0 0.5rem;
 	display: flex;
 	flex-wrap: wrap;
@@ -98,11 +94,14 @@ const Footer = styled.footer`
 
 const Link = styled(NavLink)`
 	margin-left: auto;
-	padding: 0.5rem 2.5rem;
+	/* padding: 0.5rem 2.5rem; */
+	padding: 0.75rem;
+	width: 50%;
 	background-color: #5f9284;
 	border-radius: 0 0 7px 0;
 	color: #f5eedc;
 	font-size: calc(1em + 0.5vw);
+	text-align: center;
 	text-decoration: none;
 	transition: all 250ms ease;
 	font-family: "Bakbak One", "Roboto", sans-serif;
