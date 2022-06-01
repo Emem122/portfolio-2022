@@ -1,4 +1,3 @@
-export { default as ProfilePic } from "./ProfilePic";
 export { default as VectorBrown } from "./VectorBrown";
 export { default as VectorDarkYellow } from "./VectorDarkYellow";
 export { default as VectorGreen } from "./VectorGreen";

@@ -12,7 +12,7 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	gap: 3rem;
-	background-color: #97bfb4;
+	background-color: var(--green);
 	position: relative;
 `;
 
@@ -21,35 +21,28 @@ const MainVisual = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	/* position: absolute;
-	left: 50%;
-	top: 48%;
-	transform: translate(-50%, -50%); */
 	width: 100%;
-	@media screen and (max-width: 767.98px) {
-		/* top: 35%; */
-	}
 `;
 
 const Title = styled(motion.h1)`
 	font-size: clamp(24px, 17vw, 120px);
-	color: #dd4a48;
+	color: var(--red);
 	line-height: 1;
-	text-shadow: 3px 2px 0px #5f9284;
+	text-shadow: 3px 2px 0px var(--green-dark);
 	margin: 0;
-	font-family: "Bakbak One", "Roboto", sans-serif;
+	font-family: var(--ff-big);
 
 	span {
 		display: inline-block;
 	}
 
 	span.white {
-		color: #f5eedc;
+		color: var(--white);
 	}
 `;
 
 const SubTitle = styled.h3`
-	color: #5f9284;
+	color: var(--green-dark);
 `;
 
 const bounce = keyframes`
@@ -65,37 +58,28 @@ const bounce = keyframes`
 `;
 
 const Nav = styled(motion.div)`
-	/* position: absolute;
-	bottom: 3%; */
 	display: flex;
 	gap: 2rem;
 	@media screen and (max-width: 767.98px) {
 		bottom: 20%;
-		/* flex-direction: column; */
 		gap: 0.75rem;
 	}
 
 	& > * {
 		font-size: clamp(20px, 10vw, 60px);
-		color: #f5eedc;
+		color: var(--white);
 		cursor: pointer;
-		/* transition: text-shadow 250ms ease;
-
-		&:hover {
-			animation: ${bounce} infinite 0.8s ease-out;
-			text-shadow: -3px -3px 0px #dd4a48;
-		} */
 	}
 `;
 
 const ABOUT = styled(motion(NavLink))`
-	text-shadow: -3px -3px 0px #5f9284;
+	text-shadow: -3px -3px 0px var(--green-dark);
 `;
 const SKILLS = styled(motion(NavLink))`
-	text-shadow: -3px -3px 0px #5f9284;
+	text-shadow: -3px -3px 0px var(--green-dark);
 `;
 const WORKS = styled(motion(NavLink))`
-	text-shadow: -3px -3px 0px #5f9284;
+	text-shadow: -3px -3px 0px var(--green-dark);
 `;
 
 /* variants */
@@ -122,7 +106,6 @@ const childVariants = {
 		transition: {
 			type: "spring",
 			duration: 0.5,
-			// duration: 0.8,
 		},
 	},
 };

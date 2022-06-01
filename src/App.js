@@ -18,7 +18,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<AnimatePresence exitBeforeEnter>
+			<AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
 				<Switch location={location} key={rootPath}>
 					<Route exact path="/" component={Main} />
 					<Route exact path="/about" component={AboutPage} />

@@ -25,22 +25,13 @@ const Box = styled(motion.div)`
 `;
 
 const Main = styled(motion.ul)`
-	/* background-color: #97bfb4; */
 	position: fixed;
-	top: 12rem;
+	top: 25%;
 	left: calc(8rem + 15vw);
-	/* height: 40vh; */
 	display: flex;
 	color: white;
-	@media screen and (max-width: 820px) {
-		top: 20rem;
-	}
 	@media screen and (max-width: 767.98px) {
 		left: calc(5rem + 15vw);
-		top: 15rem;
-	}
-	@media screen and (max-width: 375px) {
-		top: 10rem;
 	}
 `;
 
@@ -100,16 +91,6 @@ const Scroll = styled(motion.p)`
 	}
 `;
 
-// const ScrollDown = styled(motion.p)`
-// 	position: fixed;
-// 	bottom: 10px;
-// 	left: 20px;
-// 	font-weight: bold;
-// 	font-size: calc(0.8em + 0.7vw);
-// 	letter-spacing: 0.3px;
-// 	color: #dd4a48;
-// `;
-
 // Framer-motion Configuration
 const container = {
 	hidden: { opacity: 0 },
@@ -166,17 +147,6 @@ const WorksPage = () => {
 					))}
 				</Main>
 			</Box>
-			{/* <ScrollDown
-				initial={{ opacity: 0 }}
-				animate={{
-					opacity: 1,
-					y: [0, -10],
-					transition: { delay: 1, y: { duration: 0.6, yoyo: Infinity, ease: "easeOut" } },
-				}}
-				exit={{ opacity: 0 }}
-			>
-				Scroll Down
-			</ScrollDown> */}
 		</Container>
 	);
 };

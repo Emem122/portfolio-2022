@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 const Box = styled(motion.li)`
 	width: 18rem;
 	margin-right: 8rem;
-	background-color: #f5eedc;
+	background-color: var(--white);
 	border-radius: 25px;
-	border: 15px solid #5f9284;
+	border: 15px solid var(--green-dark);
 	display: flex;
 	flex-direction: column;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
@@ -94,17 +94,16 @@ const Footer = styled.footer`
 
 const Link = styled(NavLink)`
 	margin-left: auto;
-	/* padding: 0.5rem 2.5rem; */
 	padding: 0.75rem;
 	width: 50%;
-	background-color: #5f9284;
+	background-color: var(--green-dark);
 	border-radius: 0 0 7px 0;
-	color: #f5eedc;
+	color: var(--white);
 	font-size: calc(1em + 0.5vw);
 	text-align: center;
 	text-decoration: none;
 	transition: all 250ms ease;
-	font-family: "Bakbak One", "Roboto", sans-serif;
+	font-family: var(--ff-big);
 
 	&:hover {
 		background-color: #58887b;

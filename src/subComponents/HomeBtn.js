@@ -9,7 +9,7 @@ const Container = styled(motion.div)`
 	left: 35px;
 	top: 38px;
 	z-index: 3;
-	background-color: #5f9284;
+	background-color: var(--green-dark);
 	border-radius: 1rem;
 	@media screen and (max-width: 767.98px) {
 		left: 20px;
@@ -19,7 +19,7 @@ const Container = styled(motion.div)`
 
 const Logo = styled(NavLink)`
 	h2 {
-		color: #f5eedc;
+		color: var(--white);
 	}
 `;
 

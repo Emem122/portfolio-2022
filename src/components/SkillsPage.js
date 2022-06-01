@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import gsap from "gsap";
+// import gsap from "gsap";
 import styled from "styled-components";
 import HomeBtn from "../subComponents/HomeBtn";
 import { SvgFile } from "./SvgImages";
@@ -8,14 +8,18 @@ import Mouse from "../images/mouse.png";
 import Hamburger from "../subComponents/Hamburger";
 import { Skill } from "../data/SkillsData";
 
-const Container = styled.div`
-	background-color: #97bfb4;
-	/* position: relative; */
+const Container = styled(motion.div)`
+	background-color: var(--green);
+	box-sizing: border-box;
+	border: 1rem solid var(--white);
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
+	@media screen and (max-width: 820px) {
+		border-width: 10px;
+	}
 `;
 
 const Title = styled(motion.h2)``;
@@ -65,13 +69,14 @@ const WindowContainer = styled(motion.div)`
 	max-width: 800px;
 	height: 70vh;
 	max-height: 650px;
-	margin: 160px auto 0;
+	margin: 10% auto 0;
 	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	z-index: 5;
 	@media screen and (max-width: 767.98px) {
 		margin-top: 100px;
 		width: 90vw;
@@ -86,7 +91,6 @@ const WindowBar = styled.div`
 	height: 35px;
 	background-color: #c4c4c4;
 	position: relative;
-	cursor: pointer;
 
 	.button {
 		width: 15px;
@@ -96,15 +100,15 @@ const WindowBar = styled.div`
 		border-radius: 50%;
 		transform: translateY(-50%);
 		&--red {
-			background-color: #dd4a48;
+			background-color: var(--red);
 			left: 15px;
 		}
 		&--yellow {
-			background-color: #fad92f;
+			background-color: var(--yellow);
 			left: 45px;
 		}
 		&--green {
-			background-color: #97bfb4;
+			background-color: var(--green);
 			left: 75px;
 		}
 	}
@@ -112,7 +116,7 @@ const WindowBar = styled.div`
 
 const ContentWrap = styled.div`
 	padding: 2vw clamp(10px, 5vw, 50px);
-	background-color: #f5eedc;
+	background-color: var(--white);
 	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
@@ -133,7 +137,7 @@ const Content = styled.div`
 	display: flex;
 	margin: 0 auto;
 	gap: 20px;
-	max-width: 500px;
+	max-width: 550px;
 
 	&:nth-of-type(even) {
 		flex-direction: row-reverse;
@@ -143,14 +147,19 @@ const SkillIcon = styled.div`
 	margin-top: 0.5rem;
 	width: 50px;
 	height: 50px;
-	border-radius: 50%;
-	background: #fad92f;
+	/* border-radius: 50%; */
+	/* background: #fff; */
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-weight: bold;
-	color: #fff;
+	/* color: #fff; */
+
+	& > * {
+		width: 100%;
+		height: 100%;
+	}
 `;
 const SkillBalloonArea = styled.div`
 	display: flex;
@@ -162,7 +171,7 @@ const SkillBalloonArea = styled.div`
 `;
 
 const SkillName = styled.h5`
-	color: #4f091d;
+	color: var(--brown);
 `;
 
 const SkillBalloon = styled.div`
@@ -173,7 +182,7 @@ const SkillBalloon = styled.div`
 	margin-right: clamp(10px, 5vw, 60px);
 	font-size: clamp(12px, 2vw, 14px);
 	${Content}:nth-of-type(even) & {
-		background-color: #97bfb4;
+		background-color: rgba(191, 220, 198, 1);
 		margin-right: 0;
 		margin-left: clamp(10px, 5vw, 60px);
 	}
@@ -183,7 +192,6 @@ const SkillBalloon = styled.div`
 		position: absolute;
 		top: 10px;
 		left: -33px;
-		/* margin-top: -15px; */
 		border: 15px solid transparent;
 		border-left: 25px solid #fff;
 		z-index: 0;
@@ -193,17 +201,24 @@ const SkillBalloon = styled.div`
 		${Content}:nth-of-type(even) & {
 			right: -13px;
 			left: inherit;
-			border-right: 25px solid #97bfb4;
+			border-right: 25px solid rgba(191, 220, 198, 1);
 			border-left: none;
 			-webkit-transform: rotate(45deg);
 			transform: rotate(45deg);
 		}
 	}
+	p {
+		line-height: 1.4;
+	}
 `;
 
 const SkillsPage = () => {
 	return (
-		<Container>
+		<Container
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1, transition: { type: "spring", duration: 1.5, delay: 0.1 } }}
+			exit={{ opacity: 0, transition: { delay: 0.3, duration: 0.5 } }}
+		>
 			<motion.div exit={{ y: -200, transition: { delay: 0.3 } }}>
 				<HomeBtn />
 			</motion.div>
@@ -224,7 +239,7 @@ const SkillsPage = () => {
 					exit={{ scale: 0, transition: { delay: 0.1 } }}
 				>
 					<SvgFile style={{ width: "80%", verticalAlign: "bottom" }} />
-					<p style={{ color: "#5f9284", fontFamily: "Bakbak One", textAlign: "center" }}>File1</p>
+					<p style={{ color: "var(--green-dark)", fontFamily: "Bakbak One", textAlign: "center" }}>File1</p>
 				</motion.div>
 				<motion.div
 					style={{ textAlign: "center" }}
@@ -233,7 +248,7 @@ const SkillsPage = () => {
 					exit={{ scale: 0, transition: { delay: 0.2 } }}
 				>
 					<SvgFile style={{ width: "80%", verticalAlign: "bottom" }} />
-					<p style={{ color: "#5f9284", fontFamily: "Bakbak One", textAlign: "center" }}>File2</p>
+					<p style={{ color: "var(--green-dark)", fontFamily: "Bakbak One", textAlign: "center" }}>File2</p>
 				</motion.div>
 			</FileWrap>
 			<MouseImg
@@ -246,13 +261,13 @@ const SkillsPage = () => {
 				initial={{ y: 1000, scale: 0, transition: { type: "spring", duration: 1.2, delay: 0.5 } }}
 				animate={{ y: 0, scale: 1, transition: { type: "spring", duration: 1.2, delay: 0.5 } }}
 				exit={{ y: 1000, scale: 0, transition: { delay: 0.4, duration: 1.2, delay: 0.4 } }}
-				drag
-				dragConstraints={{
-					right: 0,
-					left: 0,
-					top: 0,
-					bottom: 0,
-				}}
+				// drag
+				// dragConstraints={{
+				// 	right: 0,
+				// 	left: 0,
+				// 	top: 0,
+				// 	bottom: 0,
+				// }}
 			>
 				<WindowBar>
 					<span className="button button--red"></span>
@@ -262,7 +277,15 @@ const SkillsPage = () => {
 				<ContentWrap>
 					{Skill.map((d) => (
 						<Content key={d.id}>
-							<SkillIcon>{d.icon}</SkillIcon>
+							<SkillIcon
+								style={{
+									color: `${d.color}`,
+									backgroundColor: `${d.backgroundColor}`,
+									borderRadius: `${d.borderRadius}`,
+								}}
+							>
+								{d.icon}
+							</SkillIcon>
 							<SkillBalloonArea>
 								<SkillName>{d.name}</SkillName>
 								<SkillBalloon>

@@ -67,7 +67,6 @@ const Red = styled(motion.div)`
 `;
 
 const Green = styled(motion.div)`
-	// style={{ minWidth: "200px", width: "22vw", position: "absolute", top: 0, left: "45%" }}
 	min-width: 200px;
 	width: 25vw;
 	position: absolute;
@@ -84,7 +83,6 @@ const Green = styled(motion.div)`
 `;
 
 const White = styled(motion.div)`
-	// style={{ minWidth: "200px", width: "22vw", position: "absolute", bottom: 0, left: "38%" }}
 	min-width: 200px;
 	width: 24vw;
 	position: absolute;
@@ -103,7 +101,6 @@ const White = styled(motion.div)`
 `;
 
 const Yellow = styled(motion.div)`
-	// style={{ minWidth: "200px", width: "20vw", position: "absolute", bottom: 0, right: 0 }}
 	min-width: 200px;
 	width: 23vw;
 	position: absolute;
@@ -123,7 +120,6 @@ const WorksBg = () => {
 	return (
 		<Box>
 			<Brown
-				// style={{ minWidth: "200px", width: "21vw", position: "absolute", right: "8%", top: "20%" }}
 				initial={{ scale: 0, transition: { type: "spring", duration: 1.5, delay: 0.2 } }}
 				animate={{ scale: 1, transition: { type: "spring", duration: 1.5, delay: 0.2 } }}
 				exit={{ scale: 0, opacity: 0, transition: { duration: 0.5, delay: 0.3 } }}
@@ -131,7 +127,6 @@ const WorksBg = () => {
 				<VectorBrown style={{ verticalAlign: "bottom", width: "100%", height: "auto" }} />
 			</Brown>
 			<DarkYellow
-				// style={{ minWidth: "200px", width: "14vw", position: "absolute", left: 0, bottom: "6%" }}
 				initial={{ scale: 0, left: -200, transition: { type: "spring", duration: 1.5, delay: 0.5 } }}
 				animate={{ scale: 1, left: 0, transition: { type: "spring", duration: 1.5, delay: 0.5 } }}
 				exit={{ scale: 0, left: -200, opacity: 0, transition: { duration: 0.5, delay: 0.3 } }}
@@ -139,7 +134,6 @@ const WorksBg = () => {
 				<VectorDarkYellow style={{ verticalAlign: "bottom", width: "100%", height: "auto" }} />
 			</DarkYellow>
 			<Red
-				// style={{ minWidth: "200px", width: "21vw", position: "absolute", left: "13%", top: "18%" }}
 				initial={{ scale: 0, transition: { type: "spring", duration: 1.5, delay: 0.3 } }}
 				animate={{ scale: 1, transition: { type: "spring", duration: 1.5, delay: 0.3 } }}
 				exit={{ scale: 0, opacity: 0, transition: { duration: 0.5, delay: 0.3 } }}
@@ -147,7 +141,6 @@ const WorksBg = () => {
 				<VectorRed style={{ verticalAlign: "bottom", width: "100%", height: "auto" }} />
 			</Red>
 			<Green
-				// style={{ minWidth: "200px", width: "22vw", position: "absolute", top: 0, left: "45%" }}
 				initial={{ scale: 0, top: -200, transition: { type: "spring", duration: 1.5, delay: 0.5 } }}
 				animate={{ scale: 1, top: 0, transition: { type: "spring", duration: 1.5, delay: 0.5 } }}
 				exit={{ scale: 0, top: -200, opacity: 0, transition: { duration: 0.5, delay: 0.3 } }}
@@ -155,7 +148,6 @@ const WorksBg = () => {
 				<VectorGreen style={{ verticalAlign: "bottom", width: "100%", height: "auto" }} />
 			</Green>
 			<White
-				// style={{ minWidth: "200px", width: "22vw", position: "absolute", bottom: 0, left: "38%" }}
 				initial={{ scale: 0, bottom: -200, transition: { type: "spring", duration: 1.5, delay: 0.3 } }}
 				animate={{ scale: 1, bottom: 0, transition: { type: "spring", duration: 1.5, delay: 0.3 } }}
 				exit={{ scale: 0, bottom: -200, opacity: 0, transition: { duration: 0.5, delay: 0.3 } }}
@@ -163,7 +155,6 @@ const WorksBg = () => {
 				<VectorWhite style={{ verticalAlign: "bottom", width: "100%", height: "auto" }} />
 			</White>
 			<Yellow
-				// style={{ minWidth: "200px", width: "20vw", position: "absolute", bottom: 0, right: 0 }}
 				initial={{ scale: 0, right: -200, bottom: -100, transition: { type: "spring", duration: 1.5, delay: 0.4 } }}
 				animate={{ scale: 1, right: 0, bottom: 0, transition: { type: "spring", duration: 1.5, delay: 0.4 } }}
 				exit={{ scale: 0, right: -200, bottom: -100, opacity: 0, transition: { duration: 0.5, delay: 0.3 } }}

@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 import Hamburger from "../subComponents/Hamburger";
 import HomeBtn from "../subComponents/HomeBtn";
-// import { ProfilePic } from "./SvgImages";
 
 import { IconContext } from "react-icons";
 import { FcCalendar, FcSelfie } from "react-icons/fc";
@@ -15,7 +14,6 @@ const Container = styled.div`
 	position: relative;
 	height: 100vh;
 	width: 100vw;
-	/* overflow: hidden; */
 `;
 
 const Box = styled(motion.div)`
@@ -40,8 +38,6 @@ const ContentWrap = styled.div`
 const ContentList = styled(motion.ul)`
 	list-style: none;
 	padding-bottom: 2rem;
-	/* & > li:not(:first-of-type) {
-	} */
 `;
 
 const ContentItem = styled(motion.li)`
@@ -51,7 +47,7 @@ const ContentItem = styled(motion.li)`
 	align-items: flex-start;
 	padding: 2rem 3.5rem;
 	border-radius: 1rem;
-	background-color: #f5eedc;
+	background-color: var(--white);
 	box-shadow: 4px 4px 3px #567c72;
 	@media screen and (max-width: 767.98px) {
 		padding: 1rem;
@@ -72,13 +68,23 @@ const ContentInn = styled.div`
 const ContentTitle = styled.h3`
 	font-size: clamp(18px, 3vw, 22px);
 	margin-bottom: 0.5rem;
-	color: #5f9284;
+	color: var(--green-dark);
 `;
 
 const ContentText = styled.div`
-	p {
+	p,
+	dl {
 		font-size: 1rem;
 		color: #3b544e;
+		line-height: 1.4;
+		dt {
+			/* text-decoration: underline; */
+			color: var(--green-dark);
+			font-weight: bold;
+		}
+		dd:not(:last-of-type) {
+			margin-bottom: 0.5rem;
+		}
 	}
 `;
 
@@ -97,13 +103,11 @@ const ContainerVariant = {
 
 const ListVariant = {
 	hidden: {
-		// scaleX: 0,
 		y: 100,
 		opacity: 0,
 	},
 	show: {
 		y: 0,
-		// scaleX: 1,
 		opacity: 1,
 		transition: {
 			type: "spring",
@@ -136,11 +140,10 @@ const AboutPage = () => {
 									<FcSelfie />
 								</ContentEmoji>
 								<ContentInn>
-									<ContentTitle>プロフィール</ContentTitle>
+									<ContentTitle>現在</ContentTitle>
 									<ContentText>
 										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ipsam totam impedit! Voluptas
-											consequatur alias modi sed magnam laborum blanditiis.
+											2022年6月よりWeb制作会社にて、食品系ECサイトの制作に携わっております。主にサイトの更新や新規LPの制作をしております。
 										</p>
 									</ContentText>
 								</ContentInn>
@@ -152,10 +155,14 @@ const AboutPage = () => {
 								<ContentInn>
 									<ContentTitle>経歴</ContentTitle>
 									<ContentText>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ipsam totam impedit! Voluptas
-											consequatur alias modi sed magnam laborum blanditiis.
-										</p>
+										<dl>
+											<dt>2020年6月〜</dt>
+											<dd>WEB制作会社にてECサイトのコーダーとして勤務</dd>
+											<dt>2020年11月〜2021年5月</dt>
+											<dd>職業訓練校にてWEBデザイン制作科を受講</dd>
+											<dt>2020年4月〜9月</dt>
+											<dd>特許事務所にて事務職を経験</dd>
+										</dl>
 									</ContentText>
 								</ContentInn>
 							</ContentItem>
@@ -169,13 +176,12 @@ const AboutPage = () => {
 									<ContentTitle>学生時代</ContentTitle>
 									<ContentText>
 										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ipsam totam impedit! Voluptas
-											consequatur alias modi sed magnam laborum blanditiis.
+											英語・英米文学を主に学習し、３年次には１年間のカナダ留学を経験いたしました。英語の実力としては基本的な英語の読み聞き、日常会話などが可能です。
 										</p>
 									</ContentText>
 								</ContentInn>
 							</ContentItem>
-							<ContentItem variants={ListVariant} exit={{ scale: 0, opacity: 0, transition: { delay: 0.1 } }}>
+							{/* <ContentItem variants={ListVariant} exit={{ scale: 0, opacity: 0, transition: { delay: 0.1 } }}>
 								<ContentEmoji>
 									<Twemoji options={{ className: "twemoji" }}>
 										<p>📚</p>
@@ -190,7 +196,7 @@ const AboutPage = () => {
 										</p>
 									</ContentText>
 								</ContentInn>
-							</ContentItem>
+							</ContentItem> */}
 						</ContentList>
 					</ContentWrap>
 				</Container>
